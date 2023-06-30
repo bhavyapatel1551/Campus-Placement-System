@@ -1,0 +1,110 @@
+<%- include('../includes/companyheader.ejs')%>
+
+    <div class="container rounded bg-white mt-5 mb-5 ml-3 mr-3" onload="LoadOnce()">
+        <div class="row">
+            <div class="col-md-3 mt-0 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class=" " width="150px"
+                        src="<%=compDetails.cmpImage%>">
+                    <button type="button" onclick="window.location.href='/company/studentsection';"
+                        class="btn btn-outline-dark m-2 btn-block">Student's Info</button>
+                    <button type="button" onclick="window.location.href='/company/appliedStudentDetails';"
+                        class="btn btn-outline-dark m-2 btn-block">Applied Students's Data</button>
+                    <button type="button" onclick="window.location.href='/company/acceptedStudent';"
+                        class="btn btn-outline-dark m-2 btn-block">Accepted Students For Interview</button>
+                    <button type="button" onclick="window.location.href='/company/placedStudent';"
+                        class="btn btn-outline-dark m-2 btn-block">Place Student</button>
+                    <button type="button" onclick="window.location.href='/company/companyProfile';"
+                        class="btn btn-outline-dark m-2 btn-block">Profile</button>
+                </div>
+            </div>
+            <div class="col-md-5 border-right mt-5 ">
+                <div class="card-block ml-4">
+                    <h4 class="m-b-20 p-b-5 b-b-default mb-4 f-w-600 text-uppercase font-weight-bold">Information</h4>
+                    <div class="row mb-2">
+                        <div class="col-sm-6 mb-2">
+                            <h6 class="text-muted  f-w-400">Name</h6>
+                            <p class="m-b-10 mb-2 font-weight-bold f-w-600">
+                                <%=compDetails.cname%>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <h6 class="text-muted  f-w-400">ID</h6>
+                            <p class="m-b-10 mb-2 font-weight-bold f-w-600">
+                                <%=compDetails.cid%>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-sm-6 mb-2">
+                            <h6 class="text-muted  f-w-400">Mobile Number</h6>
+                            <p class="m-b-10 mb-2 font-weight-bold f-w-600">
+                                <%=compDetails.mobileNo%>
+                            </p>
+                        </div>
+                        <div class="col-sm-6 mb-2">
+                            <h6 class="text-muted  f-w-400">Email Id</h6>
+                            <p class="m-b-10 mb-2 font-weight-bold f-w-600">
+                                <%=compDetails.cemail%>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-2">
+
+                        <div class="col-sm-6 mb-2">
+                            <h6 class="text-muted  f-w-400">Address</h6>
+                            <p class="m-b-10 mb-2 font-weight-bold f-w-600">
+                                <%=compDetails.address%>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <h6 class="text-muted  f-w-400">Discription</h6>
+                        <p class="m-b-10 mb-2 font-weight-bold f-w-600">
+                            <a href="/company/companyDetail">Click To See Detail</a>
+                        </p>
+
+                    </div>
+
+                    <div class="row mb-2">
+                        <h6 class="text-muted  f-w-400">Arrival Date</h6>
+                        <p class="m-b-10 mb-2 font-weight-bold f-w-600">
+                            <%=date%>
+                        </p>
+
+                    </div>
+
+                    <div class="row mb-2">
+                        <h6 class="text-muted  f-w-400">Job Post</h6>
+                        <p class="m-b-10 mb-2 font-weight-bold f-w-600">
+                            <%=compDetails.jobpost%>
+                        </p>
+
+                    </div>
+                    <div class="row mt-1">
+                        <button type="button" onclick="window.location.href='/company/companyeditdetails'"
+                            class="btn btn-outline-dark">Edit</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 ">
+                <img class="d-block w-100" style="height: 100%; width: 90%;"
+                                src="https://th.bing.com/th/id/R.b78dadb76aa7c02bc9745b494b7abc97?rik=i%2bzlpZXKwlPgFw&riu=http%3a%2f%2fbuzz16.com%2fwp-content%2fuploads%2f2016%2f10%2finspirational-quotes-for-college-students-34.jpg&ehk=p4hAXDDmrRiNLVXeBGU5tVkAGGvsYiaNhhTKT9dUgJs%3d&risl=&pid=ImgRaw&r=0"
+                                alt="First slide">
+              
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script>
+    // window.onload = function () {
+    //     if (!window.location.hash) {
+    //         window.location = window.location + '#updated';
+    //         window.location.reload();
+    //     }
+    // }
+    </script>
+
+
+    <%- include('../includes/companyfooter.ejs')%>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Company info</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/adminStudentData.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
+:root{
+    --dark:#2b2d42;
+    --light:#adb5bd;
+    --border:#dee2e6;
+    --border-btn:#edf2f4;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    font-family: 'PT Sans', sans-serif;
+}
+.container{
+    max-width: 1024px;
+    margin: auto;
+    margin-top: 0px;
+}
+.nav-brand{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justify-between{
+    justify-content: space-between;
+} 
+
+.text-center{
+    text-align: center;
+}
+
+.border-shadow{
+    border: 1px solid var(--border-btn);
+    box-shadow: 1px 3px 10px #e9ecef;
+}
+
+.text-dark{
+    color:var(--dark);
+}
+.inline{
+    display: inline-block;
+}
+
+.text-light{
+    color: var(--light);
+}
+
+.text-gradient{
+    background: linear-gradient(to right,#8e2de2,#4a00e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#header nav{
+    background-color: bisque;
+    padding: 1em 0;
+    width: 100%;
+}
+#site-main{
+    margin-top: 6em;
+    font-family: 'Barlow', sans-serif;
+}
+
+#site-main .container .box-nav >a{
+    font-size: 1em;
+    padding: 1em;
+}
+#site-main .container form{
+    margin: 2em 0;
+}
+
+
+/* add new data */
+.form-title{
+    margin-top: 2em;
+}
+.form-title >h2{
+    padding:.5em 0;
+}
+
+.new_student{
+    max-width: 786px;
+    margin: auto;
+}
+
+#new_student .form-group,
+#update_studet .form-group{
+    margin: .4em 0;
+}
+
+#add_student .form-group input[type="text"],
+#update_student .form-group input[type="text"]{
+    width: 100%;
+    padding: .6em 1em;
+    margin: .5em 0;
+    border: 1px solid var(--border);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1em;
+    border-radius: .2em;
+}
+
+#add_student .form-group .btn,
+#update_student .form-group .btn{
+    width: 100%;
+    padding: .9em 1em;
+    background-color: #16db93;
+    border: none;
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 2em;
+    margin: 5em 0;
+}
+
+#add_student .form-group .btn:hover,
+#update_student .form-group .btn:hover{
+    background-color: var(--dark);
+    color: var(--border);
+}
+
+    </style>
+</head>
+<body>
+    <%- include('../includes/companyheader.ejs')%>
+
+    <div>
+
+    <main id="site-main">
+        <div class="container" >
+   
+
+            <div class="form-title text-center" style="margin-top: 0px;">
+                <h2 class="text-dark">Edit Profile</h2>
+                <span class="text-light">Use the below form to Edit the Company info</span>
+            </div>
+            <div class="box-nav d-flex justify-between mt-0">
+                <div class="filter">
+                    <a href="/company/companyProfile"><i class="fas fa-angle-double-left"></i>Back</a>
+                </div>
+            </div>
+
+            <!--form handling-->
+            <form action="/company/companyeditdetails" id="update_student" method="POST">
+               <div class="new_student">
+                <div class="form-group">
+
+                    <label for="name" class="text-dark">Company Name</label>
+                    <input type="text" value="<%=compDetails.cname%>" name="cname">
+                </div>
+                <div class="form-group">
+                    <label for="id" class="text-dark">Mobile No</label>
+                    <input type="text" value="<%=compDetails.mobileNo%>" name="mobileNo">
+                </div>
+                <div class="form-group">
+                    <label for="email" class="text-dark">Email ID</label>
+                    <input type="text" value="<%=compDetails.cemail%>" name="cemail">
+                </div>
+                <div class="form-group">
+                    <label for="address" class="text-dark">Address</label>
+                    <input type="text" value="<%=compDetails.address%>" name="address">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="address" class="text-dark">Job Post</label>
+                    <input type="text" value="<%=compDetails.jobpost%>" name="jobpost">
+                </div>
+
+                <div class="form-group">
+                    <label id="'date" for="date" class="text-dark">Date</label>
+                    <!-- <script>
+                        console.log('<%=compDetails.arrivaldate%>');
+                        if('<%=compDetails.arrivaldate%>'==null){
+                            document.getElementById('date').valueAsDate=new Date.toString();
+                        }
+                        else{
+                            document.getElementById('date').valueAsDate= new Date().toISOString.setDate('<%=compDetails.arrivaldate%>')
+                        }
+                    </script> -->
+                    <input type="date" value="<%=date%>" name="arrivaldate">
+                </div>
+
+                <div class="form-group">
+                    <!-- <a href="/companyeditdetails/<%=compDetails.cid%>"> -->
+    
+                    <button type="submit"   class="btn text-dark update" value="<%=compDetails.cid%>">Save</button>
+                <!-- </a> -->
+                    
+                </div>
+               </div>
+            </form>
+        </div>
+    </main>
+</div>
+
+
+</body>
+</html>

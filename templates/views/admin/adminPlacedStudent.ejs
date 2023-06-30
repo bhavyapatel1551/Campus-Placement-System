@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%=pageTitle%>
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/adminStudentData.css" />
+    <style>
+        .dtHorizontalVerticalExampleWrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+#dtHorizontalVerticalExample th, td {
+  white-space: nowrap;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: .5em;
+}
+    </style>
+</head>
+
+<body>
+<header>
+    <%- include('../includes/adminheader.ejs')%>
+
+</header>
+    
+    <!-- <%- include('../includes/navlogout.ejs')%> -->
+    <div class="container-fluid rounded bg-white mt-5 mb-0 ml-0 mr-0">
+        <div class="row">
+            <div class="col-md-3 mt-0 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle "
+                        width="150px"
+                        src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                    <button type="button"
+                        onclick="window.location.href='/admin/adminStudent'"
+                        class="btn btn-outline-dark m-2 btn-block">Student Data</button>
+                    <button type="button" onclick="window.location.href='/admin/adminCompany';"
+                        class="btn btn-outline-dark m-2 btn-block">Company Data</button>
+                    <button type="button" onclick="window.location.href='/admin/adminQuestionSection';"
+                        class="btn btn-outline-dark m-2 btn-block">Question Section</button>
+                    <button type="button" onclick="window.location.href='/admin/adminCollegeData';"
+                        class="btn btn-outline-dark m-2 btn-block">College Data</button>
+                        <button type="button" onclick="window.location.href='/admin/adminPlacedStudent';"
+                        class="btn btn-outline-dark m-2 btn-block">Placed Student This Year</button>
+                    <button type="button" onclick="window.location.href='/admin/adminProfile';"
+                        class="btn btn-outline-dark m-2 btn-block">Profile</button>
+                </div>
+            </div>
+<div class="col overflow-scroll" >
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-2">
+                    <h2 class="heading-section">Applied Student</h2>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-12">
+                    <div class="table-wrap">
+                        <table class="table">
+                          <thead class="thead-dark">
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Student Name </th>
+                                <th>Company id</th>
+                                <th>Company name</th>
+                            
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr class="alert" role="alert">
+                                <%if(sdata.length!=0){ for(var i=0; i < sdata.length; i++){ %>
+                                    
+                                    <tr>
+                                        <td>
+                                            <%= sdata[i].sid%>
+                                        </td>
+                                        <td>
+                                            <%= sdata[i].sname%>
+                                        </td>
+                                        
+                                        <td>
+                                            <%= cdata[i].cid%>
+                                            
+                                        </td>
+                                        <td>
+                                            <%= cdata[i].cname%>
+                                        </td>
+                                       
+                                        <% }%>
+                                       
+                                    </tr>
+                                    <% }%>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

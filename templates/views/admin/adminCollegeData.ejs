@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%=pageTitle%>
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/adminStudentData.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+<header>
+    <%- include('../includes/adminheader.ejs')%>
+</header>
+    
+    <!-- <%- include('../includes/navlogout.ejs')%> -->
+    <div class="container-fluid rounded bg-white mt-5 mb-0 ml-0 mr-0">
+        <div class="row">
+            <div class="col-md-3 mt-0 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle "
+                        width="150px"
+                        src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                    <button type="button"
+                        onclick="window.location.href='/admin/adminStudent'"
+                        class="btn btn-outline-dark m-2 btn-block">Student Data</button>
+                    <button type="button" onclick="window.location.href='/admin/adminCompany';"
+                        class="btn btn-outline-dark m-2 btn-block">Company Data</button>
+                    <button type="button" onclick="window.location.href='/admin/adminQuestionSection';"
+                        class="btn btn-outline-dark m-2 btn-block">Question Section</button>
+                    <button type="button" onclick="window.location.href='/admin/adminCollegeData';"
+                        class="btn btn-outline-dark m-2 btn-block">College Data</button>
+                        <button type="button" onclick="window.location.href='/admin/adminPlacedStudent';"
+                        class="btn btn-outline-dark m-2 btn-block">Placed Student This Year</button>
+                    <button type="button" onclick="window.location.href='/admin/adminProfile';"
+                        class="btn btn-outline-dark m-2 btn-block">Profile</button>
+                </div>
+            </div>
+    <div class="col overflow-auto">
+
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-2">
+                        <h2 class="heading-section">College Data</h2>
+                    </div>
+                </div>
+                <div class="box-nav d-flex justify-between mb-3 mt-3">
+                    <a href="/admin/adminNewCollegeData" class="border-shadow">
+                        <span class="text-gradient">New User<i class="fa fa-user" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+                <div class="row ">
+                    <div class="col-md-12">
+                        <div class="table-wrap">
+                            <table class="table">
+                              <thead class="thead-dark">
+                                <tr>
+                                    <th>Sr. No</th>
+                                    <th>Student ID</th>
+                                    <th>Student Name</th>
+                                    <th>Company Name</th>
+                                    <th>Student Email-ID</th>
+                                    <th>Start Batch Year</th>
+                                    <th>End Batch Year</th>
+                                    <th>Package</th>
+                                </tr>
+
+                              </thead>
+                              <tbody>
+                                <tr class="alert" role="alert">
+                                    <%for(var i=0;i<data.length; i++){ %>
+                                        <tr>
+                                            <td>
+                                                <%=i+1%>
+                                            </td>
+                                            <td>
+                                                <%=data[i].sid%>
+                                            </td>
+                                            <td>
+                                                <%=data[i].sname%>
+                                            </td>
+                                            <td>
+                                                <%=data[i].cname%>
+                                            </td>
+                                            <td>
+                                                <%=data[i].semail%>
+                                            </td>
+                                            <td>
+                                                <%=data[i].startbatchyear%>
+                                            </td>
+                                            <td>
+                                                <%=data[i].endbatchyear%>
+                                            </td>
+                                            <td>
+                                                <%=data[i].package%> LPA
+                                            </td>
+                                            
+                                        </tr>
+                                        <%}%>
+                              </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+  
+    </div>
+    <script>
+        function myFunction() {
+        var x = document.getElementById("demo").value;
+        console.log(x)
+    }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+        integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/public/js/studentdelete.js">
+        
+    </script>
+        <%- include('../includes/homefooter.ejs')%>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <title><%=pageTitle%></title> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/QandA.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <%- include('../includes/studentheader.ejs')%>
+    <div class="container-fluid rounded bg-white mt-5 mb- ml-0 mr-0"> 
+        <div class="row">
+            <div class="col-md-3 mt-0 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle "
+                        width="150px"
+                        src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                    <button type="button"
+                        onclick="window.location.href=`https://drive.google.com/drive/folders/1p7XGVDjBJKqgj-1czTJ04WUVLchprtX4?usp=sharing`"
+                        class="btn btn-outline-dark m-2 btn-block">Material Section</button>
+                    <button type="button" onclick="window.location.href='/student/companysection';"
+                        class="btn btn-outline-dark m-2 btn-block">Company Section</button>
+                    <button type="button" onclick="window.location.href='/student/QandA';"
+                        class="btn btn-outline-dark m-2 btn-block">Question Section</button>
+                    <button type="button" onclick="window.location.href='/student/seeAcceptedCompany';"
+                        class="btn btn-outline-dark m-2 btn-block">See Accepted Company</button>
+                    <button type="button" onclick="window.location.href='/student/studentProfile';"
+                        class="btn btn-outline-dark m-2 btn-block">Profile</button>
+                </div>
+            </div>
+
+            
+    <div class="col">
+        <!--header-->
+
+        <!--/header-->
+
+        <!--Main -->
+        <main id="site-main">
+            <div class="container">
+
+
+                <div class="form-title text-center">
+                    <h2 class="text-dark">FAQ</h2>
+                    <span class="text-light">Use the below form For FAQ</span>
+                </div>
+                <!--form handling-->
+                <form action="/student/QandA" id="add_student" method="post">
+                    <div class="new_student">
+
+                        <div class="form-group">
+                            <label for="Question" class="text-dark">Post Your Question Here</label>
+                            <textarea name="question"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn text-dark update" onclick="window.location.href='student/QandA'">Save</button>
+                        </div>
+
+                        <div>
+                            <a href='/student/questionAnswer'>See FAQ Asked Questions and There Answers</a>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <%- include('../includes/studentfooter.ejs')%>
+</body>
+
+</html>

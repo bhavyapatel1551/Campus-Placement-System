@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%=pageTitle%></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/public/css/home.css" />
+
+    <link rel="stylesheet" href="/css/counts.css">
+  
+</head>
+
+<body>
+        <%- include('../includes/adminheader.ejs')%>
+
+        <div class="container-fluid rounded bg-white mt-5 mb-0 ml-0 mr-0">
+            <div class="row">
+                <div class="col-md-3 mt-0 border-right">
+                    <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle "
+                            width="150px"
+                            src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                        <button type="button"
+                            onclick="window.location.href='/admin/adminStudent'"
+                            class="btn btn-outline-dark m-2 btn-block">Student Data</button>
+                        <button type="button" onclick="window.location.href='/admin/adminCompany';"
+                            class="btn btn-outline-dark m-2 btn-block">Company Data</button>
+                        <button type="button" onclick="window.location.href='/admin/adminQuestionSection';"
+                            class="btn btn-outline-dark m-2 btn-block">Question Section</button>
+                        <button type="button" onclick="window.location.href='/admin/adminCollegeData';"
+                            class="btn btn-outline-dark m-2 btn-block">College Data</button>
+                            <button type="button" onclick="window.location.href='/admin/adminPlacedStudent';"
+                            class="btn btn-outline-dark m-2 btn-block">Placed Student This Year</button>
+                        <button type="button" onclick="window.location.href='/admin/adminProfile';"
+                            class="btn btn-outline-dark m-2 btn-block">Profile</button>
+                    </div>
+                </div>
+    
+
+
+ 
+<div class="col">
+    <section class="page-contain mt-0 pt-0 mb-0 pb-0">
+        <a href="/admin/adminStudent" class="data-card " >
+          <h3><%=stdCount%></h3>
+          <h4>Student</h4>
+          <p></p>
+          <span class="link-text" style="font-size: medium;">
+            About Student
+            <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/> -->
+      
+      </svg>
+          </span>
+        </a>
+        <a href="/admin/adminCollegeData" class="data-card " >
+            <h3><%=collegeCount%></h3>
+            <h4>Elumini</h4>
+            <p></p>
+            <span class="link-text" style="font-size: medium;">
+              About Elumini
+              <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/> -->
+        
+        </svg>
+            </span>
+          </a>
+    
+          <a href="/admin/adminCompany" class="data-card " >
+            <h3><%=compCount%></h3>
+            <h4>Company</h4>
+            <p></p>
+            <span class="link-text" style="font-size: medium;">
+            About Company
+              <svg width="25" height="16" viewBox="0 0 25 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- <path fill-rule="evenodd" clip-rule="evenodd" d="M17.8631 0.929124L24.2271 7.29308C24.6176 7.68361 24.6176 8.31677 24.2271 8.7073L17.8631 15.0713C17.4726 15.4618 16.8394 15.4618 16.4489 15.0713C16.0584 14.6807 16.0584 14.0476 16.4489 13.657L21.1058 9.00019H0.47998V7.00019H21.1058L16.4489 2.34334C16.0584 1.95281 16.0584 1.31965 16.4489 0.929124C16.8394 0.538599 17.4726 0.538599 17.8631 0.929124Z" fill="#753BBD"/> -->
+        
+        </svg>
+            </span>
+          </a>
+        
+      </section>
+    
+    
+</div>
+
+    <%- include('../includes/homefooter.ejs')%>

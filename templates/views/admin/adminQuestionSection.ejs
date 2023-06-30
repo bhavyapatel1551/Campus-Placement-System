@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        <%=pageTitle%>
+    </title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/QandA.css" />
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <%- include('../includes/adminheader.ejs')%>
+
+    <div class="container-fluid rounded bg-white mt-5 mb-0 ml-0 mr-0">
+        <div class="row">
+            <div class="col-md-3 mt-0 border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle "
+                        width="150px"
+                        src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                    <button type="button"
+                        onclick="window.location.href='/admin/adminStudent'"
+                        class="btn btn-outline-dark m-2 btn-block">Student Data</button>
+                    <button type="button" onclick="window.location.href='/admin/adminCompany';"
+                        class="btn btn-outline-dark m-2 btn-block">Company Data</button>
+                    <button type="button" onclick="window.location.href='/admin/adminQuestionSection';"
+                        class="btn btn-outline-dark m-2 btn-block">Question Section</button>
+                    <button type="button" onclick="window.location.href='/admin/adminCollegeData';"
+                        class="btn btn-outline-dark m-2 btn-block">College Data</button>
+                        <button type="button" onclick="window.location.href='/admin/adminPlacedStudent';"
+                        class="btn btn-outline-dark m-2 btn-block">Placed Student This Year</button>
+                    <button type="button" onclick="window.location.href='/admin/adminProfile';"
+                        class="btn btn-outline-dark m-2 btn-block">Profile</button>
+                </div>
+            </div>
+
+            <div class="col overflow-auto">
+       
+       
+
+                <main id="site-main">
+                    <div class="container">
+                        <div class="col-md-6 text-center mt-0 mb-5">
+                            <h2 class="heading-section">Answer the Question</h2>
+                        </div>
+        
+                        <table border="5" class="table" width="100%">
+                            <!-- <thead>
+                                <tr>
+                                    <th>Question</th>
+                                    <th>Answer </th>
+                                    <th>Submit</th>
+                                </tr>
+                            </thead> -->
+        
+                            
+                                <%if(question.length!=0){ var i=1; question.forEach(function(data){ %>
+                                    <form action="/admin/adminQuestionSection" method="post">
+                                    <div class="form-group mb-0">
+                                        <label class="form-label" for="form12"><%= data.question%></label>
+                                        <input type="hidden" name="_id" class="form-control" value="<%=data._id%>">
+        
+                                    </div>
+                                    <input type="text" class="form-control" name="answer">
+                                        <!-- <input type="text" name="answer"> -->
+                                    </div>
+                                    
+                                
+        
+                                    <div class="form-group">
+                                        <!-- <button type="submit" class="btn btn-primary mt-2">Save</button> -->
+                                        <button type="submit" class="btn btn-outline-dark w-25 mt-2">Save</button>
+        
+                                    </div>
+                                </form>
+        
+                                    <% i++; }) %>
+                                        <% }%>
+        
+        
+                            <!-- <tbody>
+                                <%if(question.length!=0){ var i=1; question.forEach(function(data){ %>
+                                    <tr>
+                                        <td>
+                                            <%= data.question%>
+                                        </td>
+                                        <td>
+                                            <input type=" text" name="answer">
+                                            </td>
+                                            <td>
+        
+                                                <a href="/adminQuestionSection">
+                                                    <input class="applybtn" type="submit" name="Apply" value="Apply"></a>
+                                    </div>
+        
+                                    </td>
+                                    <% i++; }) %>
+                                        </tr>
+                                        <% }%>
+                                            </tbody>
+                        </table> -->
+                        <!-- <div class="form-title text-center">
+                            <h2 class="text-dark">FAQ</h2>
+                            <span class="text-light">Use the below form For FAQ</span>
+                        </div> -->
+                        <!--form handling-->
+                        <!-- <form action="/QandA" id="add_student" method="post">
+                            <div class="new_student">
+        
+        
+                                <div class="form-group">
+                                    <label for="Question" class="text-dark">Question</label>
+                                    <textarea name="question"></textarea>
+                                </div>
+        
+                                <div class="form-group">
+                                    <button type="submit" class="btn text-dark update">Save</button>
+                                </div>
+                            </div>
+                        </form> -->
+                    </div>
+                </main>
+            </div>
+            </div>
+
+   
+</body>
+
+</html>
